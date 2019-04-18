@@ -6,14 +6,26 @@ Tested with Zabbix 4.0 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc
 
 ## Install
 
-1. Add a line from 'sudo' file to your sudo config
+Add a line from 'sudo' file to your sudo config
+
     cp etc/sudoers.d/zabbix-backuppc /etc/sudoers.d/zabbix-backuppc
-2. copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/local/bin'
+    
+Copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/local/bin'
+
     cp usr/local/bin/*.pl /usr/local/bin
-3. make it executable with backuppc user
+    
+Make it executable with backuppc user
+
     chmod +x /usr/local/bin/*.pl
-4. You need to have 'EnableRemoteCommands=1' in Zabbix agent config
-4. Import 'backuppc_zbx_export_templates.xml' into Zabbix and configure it
+    
+You need to have in Zabbix agent config
+
+    'EnableRemoteCommands=1' 
+    
+Import template into Zabbix and configure it:
+
+    zabbix-templates/zabbix-backuppc-template.xml
+
 
 ## The template contains
 
@@ -74,7 +86,8 @@ Information about the BackupPc itself.
 ### Backuppc - backups
 
 Discovery from individual backups
-- system.run["sudo -u backuppc /usr/local/bin/zabbix-discover-backuppc.pl"]
+
+    system.run["sudo -u backuppc /usr/local/bin/zabbix-discover-backuppc.pl"]
 
 #### Items
 
