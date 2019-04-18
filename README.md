@@ -2,13 +2,16 @@
 
 This is based on script found in thread https://www.zabbix.com/forum/showthread.php?t=17273
 
-Tested with Zabbix 2.4 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc.sourceforge.net/).
+Tested with Zabbix 4.0 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc.sourceforge.net/).
 
 ## Install
 
 1. Add a line from 'sudo' file to your sudo config
+    cp etc/sudoers.d/zabbix-backuppc /etc/sudoers.d/zabbix-backuppc
 2. copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/local/bin'
+    cp usr/local/bin/*.pl /usr/local/bin
 3. make it executable with backuppc user
+    chmod +x /usr/local/bin/*.pl
 4. You need to have 'EnableRemoteCommands=1' in Zabbix agent config
 4. Import 'backuppc_zbx_export_templates.xml' into Zabbix and configure it
 

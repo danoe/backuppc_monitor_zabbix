@@ -345,7 +345,10 @@ sub zabbix_post {
 
         foreach my $server (@servers) {
           my $cmd = "zabbix_sender -z $server -p 10051 -s $zabbix_host -k $key -o '$val'";
-          system("$cmd >/dev/null");
+          $cmd_result=system("$cmd >/dev/null");
+          if ( $cmd_result > 0 )  {
+			print ("Sending data failed. Try to execute the command manually to see errors (is your host correclty spelled ?)\n$cmd\n");
+		  }
         }
 }
 
