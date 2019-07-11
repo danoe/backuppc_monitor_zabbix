@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-07-11T15:34:10Z</date>
+    <date>2019-07-11T15:54:10Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2285,7 +2285,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>system.run[&quot;sudo -u backuppc /usr/local/bin/zabbix-discover-backuppc.pl&quot;]</key>
+                    <key>system.run[&quot;sudo -u backuppc /usr/bin/zabbix-discover-backuppc.pl&quot;]</key>
                     <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
