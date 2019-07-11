@@ -4,19 +4,23 @@ This is based on script found in thread https://www.zabbix.com/forum/showthread.
 
 Tested with Zabbix 4.0 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc.sourceforge.net/).
 
-## Install
+## Debian Package Build
+    fakeroot dpkg-deb --build src/ .
+    
+
+## Manual Install
 
 Add a line from 'sudo' file to your sudo config
 
     cp etc/sudoers.d/zabbix-backuppc /etc/sudoers.d/zabbix-backuppc
     
-Copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/local/bin'
+Copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/bin'
 
-    cp usr/local/bin/*.pl /usr/local/bin
+    cp usr/bin/*.pl /usr/bin
     
 Make it executable with backuppc user
 
-    chmod +x /usr/local/bin/*.pl
+    chmod +x /usr/bin/*.pl
     
 You need to have in Zabbix agent config
 
@@ -87,7 +91,7 @@ Information about the BackupPc itself.
 
 Discovery from individual backups
 
-    system.run["sudo -u backuppc /usr/local/bin/zabbix-discover-backuppc.pl"]
+    system.run["sudo -u backuppc /usr/bin/zabbix-discover-backuppc.pl"]
 
 #### Items
 
