@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-04-18T17:28:49Z</date>
+    <date>2019-07-11T15:34:10Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>BackupPC</template>
-            <name>BackupPC</name>
+            <template>Template App BackupPC</template>
+            <name>Template App BackupPC</name>
             <description>Based on: https://www.zabbix.com/forum/showthread.php?t=17273</description>
             <groups>
                 <group>
@@ -3162,7 +3162,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.fullbadfile[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.fullbadfile[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has bad file in full backup</name>
@@ -3178,7 +3178,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.incrbadfile[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.incrbadfile[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has bad file in incremental backup</name>
@@ -3194,7 +3194,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.fullbadshare[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.fullbadshare[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has bad share in full backup</name>
@@ -3210,7 +3210,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.incrbadshare[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.incrbadshare[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has bad share in incremental backup</name>
@@ -3226,7 +3226,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.fullerrs[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.fullerrs[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has error in full backup</name>
@@ -3242,7 +3242,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.increrrs[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.increrrs[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has error in incremental backup</name>
@@ -3258,7 +3258,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.fullage[{#BACKUPHOST}].last()}&gt;{$BACKUPPC_FULL_AGE_MAX_DAYS:&quot;{#BACKUPHOST}&quot;}</expression>
+                            <expression>{Template App BackupPC:backuppc.fullage[{#BACKUPHOST}].last()}&gt;{$BACKUPPC_FULL_AGE_MAX_DAYS:&quot;{#BACKUPHOST}&quot;}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has full backup older than {$BACKUPPC_FULL_AGE_MAX_DAYS:&quot;{#BACKUPHOST}&quot;} days</name>
@@ -3274,7 +3274,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.incrage[{#BACKUPHOST}].last()}&gt;{$BACKUPPC_INCR_AGE_MAX_DAYS:&quot;{#BACKUPHOST}&quot;}</expression>
+                            <expression>{Template App BackupPC:backuppc.incrage[{#BACKUPHOST}].last()}&gt;{$BACKUPPC_INCR_AGE_MAX_DAYS:&quot;{#BACKUPHOST}&quot;}</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has INCR backup older than {$BACKUPPC_INCR_AGE_MAX_DAYS:&quot;{#BACKUPHOST}&quot;} days</name>
@@ -3290,7 +3290,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.fulltarerrs[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.fulltarerrs[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has tar error in full backup</name>
@@ -3306,7 +3306,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{BackupPC:backuppc.incrtarerrs[{#BACKUPHOST}].last()}&gt;0</expression>
+                            <expression>{Template App BackupPC:backuppc.incrtarerrs[{#BACKUPHOST}].last()}&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>{#BACKUPHOST} has tar error in incremental backup</name>
@@ -3361,7 +3361,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{BackupPC:backuppc.hosts_nobackup_2.str(NONE)}=0 and {BackupPC:backuppc.hosts_nobackup_3.str(NONE)}&lt;&gt;0 and {BackupPC:backuppc.hosts_nobackup_4.str(NONE)}&lt;&gt;0 and {BackupPC:backuppc.hosts_nobackup_5.str(NONE)}&lt;&gt;0</expression>
+            <expression>{Template App BackupPC:backuppc.hosts_nobackup_2.str(NONE)}=0 and {Template App BackupPC:backuppc.hosts_nobackup_3.str(NONE)}&lt;&gt;0 and {Template App BackupPC:backuppc.hosts_nobackup_4.str(NONE)}&lt;&gt;0 and {Template App BackupPC:backuppc.hosts_nobackup_5.str(NONE)}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>BackupPC - Host without Backups (2 Days)</name>
@@ -3377,7 +3377,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{BackupPC:backuppc.hosts_nobackup_3.str(NONE)}=0 and {BackupPC:backuppc.hosts_nobackup_4.str(NONE)}&lt;&gt;0 and {BackupPC:backuppc.hosts_nobackup_5.str(NONE)}&lt;&gt;0</expression>
+            <expression>{Template App BackupPC:backuppc.hosts_nobackup_3.str(NONE)}=0 and {Template App BackupPC:backuppc.hosts_nobackup_4.str(NONE)}&lt;&gt;0 and {Template App BackupPC:backuppc.hosts_nobackup_5.str(NONE)}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>BackupPC - Host without Backups (3 Days)</name>
@@ -3393,7 +3393,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{BackupPC:backuppc.hosts_nobackup_4.str(NONE)}=0 and {BackupPC:backuppc.hosts_nobackup_5.str(NONE)}&lt;&gt;0</expression>
+            <expression>{Template App BackupPC:backuppc.hosts_nobackup_4.str(NONE)}=0 and {Template App BackupPC:backuppc.hosts_nobackup_5.str(NONE)}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>BackupPC - Host without Backups (4 Days)</name>
@@ -3409,7 +3409,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{BackupPC:backuppc.hosts_nobackup_5.str(NONE)}=0</expression>
+            <expression>{Template App BackupPC:backuppc.hosts_nobackup_5.str(NONE)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>BackupPC - Host without Backups (5 Days)</name>
@@ -3425,7 +3425,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{BackupPC:proc.num[BackupPC].sum(#3)}=0</expression>
+            <expression>{Template App BackupPC:proc.num[BackupPC].sum(#3)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>BackupPC - Server not Running</name>
@@ -3441,7 +3441,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{BackupPC:backuppc.hosts_full_age.str(NONE)}=0</expression>
+            <expression>{Template App BackupPC:backuppc.hosts_full_age.str(NONE)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>BackupPC - {HOSTNAME} have hosts with full backup older than 1 week</name>
