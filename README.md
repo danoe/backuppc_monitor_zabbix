@@ -2,7 +2,7 @@
 
 This is based on script found in thread https://www.zabbix.com/forum/showthread.php?t=17273
 
-Tested with Zabbix 2.4 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc.sourceforge.net/).
+Tested with Zabbix 4.4 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc.sourceforge.net/).
 
 ## Install
 
@@ -10,7 +10,8 @@ Tested with Zabbix 2.4 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc
 2. copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/local/bin'
 3. make it executable with backuppc user
 4. Upload userparameter_backuppc.conf to /etc/zabbix/zabbix_agentd.d/
-4. Import 'backuppc_zbx_export_templates.xml' into Zabbix and configure it
+5. Increase Timeout variable in /etc/zabbix/zabbix_agnetd.conf
+6. Import 'backuppc_zbx_export_templates.xml' into Zabbix and configure it
 
 ## The template contains
 
