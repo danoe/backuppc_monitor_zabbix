@@ -333,7 +333,7 @@ sub zabbix_config {
 	foreach(<CONFIG>)
 	{
 		$zabbix_host = $1 if (/Hostname\s*=\s*(.*)/); 
-		$zabbix_server = $1 if (/Server\s*=\s*(.*)/);
+		$zabbix_server = $1 if (/ServerActive\s*=\s*(.*)/);
 	}
 	close CONFIG;
 }
