@@ -247,7 +247,7 @@
                     <snmp_community>public</snmp_community>
                     <multiplier>0</multiplier>
                     <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
-                    <key>system.run[&quot;ps waux | grep BackupPC_nightly | grep -v grep | wc -l&quot;]</key>
+                    <key>backuppc.nightly</key>
                     <delay>120</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -290,7 +290,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>system.run[&quot;sudo -u backuppc /usr/local/bin/zabbix-backuppc.pl&quot;]</key>
+                    <key>backuppccollect</key>
                     <delay>300</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1667,7 +1667,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>system.run[&quot;sudo -u backuppc /usr/local/bin/zabbix-discover-backuppc.pl&quot;]</key>
+                    <key>backuppc.discovery</key>
                     <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
