@@ -2,15 +2,34 @@
 
 This is based on script found in thread https://www.zabbix.com/forum/showthread.php?t=17273
 
-Tested with Zabbix 2.4 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc.sourceforge.net/).
+Tested with Zabbix 4.0 (http://www.zabbix.com/) and Backuppc v3 (http://backuppc.sourceforge.net/).
 
-## Install
+## Debian Package Build
+    fakeroot dpkg-deb --build src/ .
+    
 
-1. Add a line from 'sudo' file to your sudo config
-2. copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/local/bin'
-3. make it executable with backuppc user
-4. You need to have 'EnableRemoteCommands=1' in Zabbix agent config
-4. Import 'backuppc_zbx_export_templates.xml' into Zabbix and configure it
+## Manual Install
+
+Add a line from 'sudo' file to your sudo config
+
+    cp etc/sudoers.d/zabbix-backuppc /etc/sudoers.d/zabbix-backuppc
+    
+Copy 'zabbix-backuppc.pl' and 'zabbix-discover-backuppc.pl' to '/usr/bin'
+
+    cp usr/bin/*.pl /usr/bin
+    
+Make it executable with backuppc user
+
+    chmod +x /usr/bin/*.pl
+    
+You need to have in Zabbix agent config
+
+    'EnableRemoteCommands=1' 
+    
+Import template into Zabbix and configure it:
+
+    zabbix-templates/zabbix-backuppc-template.xml
+
 
 ## The template contains
 
@@ -71,7 +90,8 @@ Information about the BackupPc itself.
 ### Backuppc - backups
 
 Discovery from individual backups
-- system.run["sudo -u backuppc /usr/local/bin/zabbix-discover-backuppc.pl"]
+
+    system.run["sudo -u backuppc /usr/bin/zabbix-discover-backuppc.pl"]
 
 #### Items
 

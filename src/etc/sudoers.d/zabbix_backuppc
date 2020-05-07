@@ -1,0 +1,2 @@
+zabbix ALL = (ALL) NOPASSWD: /usr/bin/zabbix-backuppc.pl,/usr/bin/zabbix-discover-backuppc.pl
+
